@@ -1,0 +1,7 @@
+[package]
+name = "hdu-report-typst"
+version = "0.1.0"
+entrypoint = "template.typ"
+authors = ["Woshiluo"]
+license = "MIT"
+description = "the typst template for reports of hdu"
