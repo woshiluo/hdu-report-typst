@@ -18,7 +18,7 @@ WIP
 ### Linux/Mac
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/woshiluo/hdu-report-typst/main/get-template.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/woshiluo/hdu-report-typst/refs/heads/master/get-template.sh -O -)"
 ```
 
 ### 手动
