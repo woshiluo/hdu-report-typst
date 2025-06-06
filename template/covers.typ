@@ -67,40 +67,32 @@
   pagebreak()
 }
 
-#let equation_num(n) = {
-  locate(loc => {
-    let chapt = counter(heading).at(loc).at(0)
-    let c = counter("equation-chapter" + str(chapt))
-    // let n = c.at(loc).at(0)
-    str(chapt) + "-" + str(n)
-  })
+#let equation_num(.., n) = {
+  let loc = here() 
+  let chapt = counter(heading).at(loc).at(0)
+  let c = counter("equation-chapter" + str(chapt))
+  str(chapt) + "-" + str(c.get().last() + 1) 
 }
 
-#let table_num(n) = {
-  locate(loc => {
-    let chapt = counter(heading).at(loc).at(0)
-    let c = counter("table-chapter" + str(chapt))
-    // let n = c.at(loc).at(0)
-    str(chapt) + "-" + str(n)
-  })
+#let table_num(.., n) = {
+  let loc = here() 
+  let chapt = counter(heading).at(loc).at(0)
+  let c = counter("table-chapter" + str(chapt))
+  str(chapt) + "-" + str(c.get().last() + 1) 
 }
 
-#let image_num(n) = {
-  locate(loc => {
-    let chapt = counter(heading).at(loc).at(0)
-    let c = counter("image-chapter" + str(chapt))
-    // let n = c.at(loc).at(0)
-    str(chapt) + "-" + str(n)
-  })
+#let image_num(.., n) = {
+  let loc = here() 
+  let chapt = counter(heading).at(loc).at(0)
+  let c = counter("image-chapter" + str(chapt))
+  str(chapt) + "-" + str(c.get().last() + 1) 
 }
 
-#let code_num(n) = {
-  locate(loc => {
-    let chapt = counter(heading).at(loc).at(0)
-    let c = counter("code-chapter" + str(chapt))
-    // let n = c.at(loc).at(0)
-    str(chapt) + "-" + str(n)
-  })
+#let code_num(.., n) = {
+  let loc = here() 
+  let chapt = counter(heading).at(loc).at(0)
+  let c = counter("code-chapter" + str(chapt))
+  str(chapt) + "-" + str(c.get().last() + 1) 
 }
 
 #let equation(equation, caption: "") = {

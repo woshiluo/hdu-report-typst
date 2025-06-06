@@ -28,6 +28,6 @@ date: (2023,5,14)
 
     outline(
     title: none,
-    indent: true,
+    indent: auto,
     )
 }

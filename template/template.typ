@@ -47,13 +47,12 @@
       date: date
     );
   }
-    show figure: it => {
+  show figure: it => {
     set align(center)
-      locate(loc => {
-        let chapt = counter(heading).at(loc).at(0)
-        let c = counter(it.kind + "-chapter" + str(chapt))
-        c.step()
-      })
+    let loc = here() 
+    let chapt = counter(heading).at(loc).at(0)
+    let c = counter(it.kind + "-chapter" + str(chapt))
+    c.step()
     if it.kind == "image" {
       set text(font: font_style.heiti, size: 12pt)
       it.body
@@ -68,41 +67,39 @@
       grid(
         columns: (20fr, 1fr),
         it.body,
-        align(center + horizon,
-          it.counter.display(it.numbering)
-        )
-      )
-    } else if it.kind == "code"{
-      set text(font: font_style.songti, size: 10.5pt)
-      it.body
-      set text(font: font_style.songti, size: 10pt)
-      it.caption
-    } else {
-      it
-    }
-  }
-
-  show heading: it => {
-    set text(weight: "bold", font: font_style.heiti, size: 12pt)
-    set block(above: 1.5em, below: 1em)
-    it
-  } + _empty_par()
-
-  set heading(numbering: (..nums) => {
-    nums.pos().map(str).join(".") + "　"
-  })
-
-  show heading.where(level: 1): it => {
-    set align(center)
-    set text(weight: "bold", font: font_style.songti, size: 14pt)
-    set block(spacing: 1em)
+        align(center + horizon, it.counter.display(it.numbering))
+    )
+  } else if it.kind == "code"{
+    set text(font: font_style.songti, size: 10.5pt)
+    it.body
+    set text(font: font_style.songti, size: 10pt)
+    it.caption
+  } else {
     it
   }
+}
 
-  show heading.where(level: 2): it => {
-    set text(weight: "bold", font: font_style.songti, size: 12.5pt)
-    it
-  }
+show heading: it => {
+  set text(weight: "bold", font: font_style.heiti, size: 12pt)
+  set block(above: 1.5em, below: 1em)
+  it
+} + _empty_par()
 
-  body
+set heading(numbering: (..nums) => {
+  nums.pos().map(str).join(".") + "　"
+})
+
+show heading.where(level: 1): it => {
+  set align(center)
+  set text(weight: "bold", font: font_style.songti, size: 14pt)
+  set block(spacing: 1em)
+  it
+}
+
+show heading.where(level: 2): it => {
+  set text(weight: "bold", font: font_style.songti, size: 12.5pt)
+  it
+}
+
+body
 }
