@@ -22,7 +22,7 @@
   set document(title: title, author: authors);
   set page("a4", numbering: "1")
   set text(font: font_style.songti, size: font_size.五号, lang: "zh");
-  set par(first-line-indent: (amount: 2em, always: true));
+  set par(first-line-indent: (amount: 2em, all: true));
   if cover_style == "normal" {
     cover_normal(
       title: title,
