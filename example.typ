@@ -51,7 +51,7 @@
 = 大标题测试2
 
 #img(
-image("./template/asserts/hdu.png"),
+image("./template/assets/hdu.png"),
 caption: "测试图片",
 ) <img:test>
 

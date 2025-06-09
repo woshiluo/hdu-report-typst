@@ -50,7 +50,7 @@
   id:"",
 ) = {
   align(left)[
-    #image("asserts/hdu.png", width: 60%)
+    #image("assets/hdu.png", width: 60%)
   ]
   align(center + horizon)[
     #pad( top: -15pt, text(title, size: 32pt, weight: 550, fill: hdu_blue, font: font_style.songti) )\
