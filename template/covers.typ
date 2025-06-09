@@ -126,6 +126,8 @@
 }
 
 #let code(code, caption: "") = {
+  show figure: set block(breakable: true)
+
   figure(
     align(left)[
       #code
