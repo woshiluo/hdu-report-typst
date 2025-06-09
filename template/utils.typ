@@ -11,14 +11,15 @@ date: (2023,5,14)
 }
 
 #let toc() = {
+  set par(first-line-indent: 0pt)
+
   align(left)[
     #text(font: font_style.heiti, weight: "semibold", fill: hdu_blue, size: 18pt, "目录")
   ]
 
-  parbreak()
+  h(1em)
 
   set text(font: font_style.heiti, size: 12pt)
-  set par(first-line-indent: 0pt)
 
   show outline: it => {
       set text(font: font_style.heiti, size: 12pt)
