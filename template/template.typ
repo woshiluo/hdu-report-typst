@@ -96,6 +96,8 @@ show heading.where(level: 1): it => {
   it
 }
 
+show <hdu-report-code-block>: set block(breakable: true)
+
 show heading.where(level: 2): it => {
   set text(weight: "bold", font: font_style.songti, size: 12.5pt)
   it
@@ -103,3 +105,4 @@ show heading.where(level: 2): it => {
 
 body
 }
+

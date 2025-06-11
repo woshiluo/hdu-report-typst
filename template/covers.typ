@@ -126,11 +126,9 @@
 }
 
 #let code(code, caption: "") = {
-  show figure: set block(breakable: true)
-
   figure(
     align(left)[
-      #code
+      #code <hdu-report-code-block>
     ],
     caption: caption,
     supplement: [代码],
