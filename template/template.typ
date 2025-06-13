@@ -33,7 +33,7 @@
   } else if cover_style == "hdu_report" {
     cover_hdu_report(
       title: title,
-      author: authors,
+      authors: authors,
       name: name,
       class: class,
       grade: grade,

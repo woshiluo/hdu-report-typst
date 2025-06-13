@@ -11,10 +11,12 @@
     #set par(leading: 1.5em);
     #text(title, size: font_size.小一, weight: "bold");\
     #{
-      if type(authors) == "string" {
+      if type(authors) == string {
         text(authors, size: font_size.四号)
-      } else {
+      } else if type(authors) == array {
         text(authors.join(" "), size: font_size.四号)
+      } else {
+        authors
       }
     }\
     #date_format(date: date);
@@ -46,7 +48,7 @@
 
 #let cover_hdu_report(
   title: "",
-  author: "",
+  authors: "",
   name: "",
   class: "",
   grade: "",
@@ -54,6 +56,22 @@
   date: (2023, 04, 17),
   id: "",
 ) = {
+  if type(authors) != type(id) {
+    panic("`author` and `id` should be of the same type")
+  }
+
+  let author_entry_from((author, id)) = {
+    _info_value(author) + _info_value(id)
+  }
+
+  let authors_listing = if type(authors) == str and type(id) == str {
+    (author_entry_from((authors, id)),)
+  } else if type(authors) == array and type(id) == array {
+    authors.zip(id).map(author_entry_from)
+  } else {
+    (authors + id,)
+  }
+
   align(left)[
     #image("assets/hdu.png", width: 60%)
   ]
@@ -67,7 +85,7 @@
         gutter: 12pt,
         _info_value(department),
         _info_value(class),
-        _info_value(author) + _info_value(id),
+        ..authors_listing,
       ),
     )
   ]
