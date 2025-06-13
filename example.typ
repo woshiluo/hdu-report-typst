@@ -5,7 +5,7 @@
   name:"xxx实验",
   id: "20010001",
   class: "XX 班",
-  authors: "XXX",
+  authors: ("XXX", "YYY"),
   department: "XX学院",
   date: (2024, 06, 23),
   cover_style: "hdu_report",
@@ -96,7 +96,5 @@ columns: (auto, auto),
 代码测试引用@code:test,
 代码测试引用@code:test2
 
-测试参考文献引用@test
 
 图片测试引用@img:test
-#bibliography("bib.yaml", style:"gb-7714-2015-numeric")
