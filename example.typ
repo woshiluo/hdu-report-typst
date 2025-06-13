@@ -2,11 +2,11 @@
 
 #show: project.with(
   title: "xxx课程实验报告",
-  name:"xxx实验",
-  id: "20010001",
+  subtitle: "xxx实验",
   class: "XX 班",
-  authors: "XXX",
   department: "XX学院",
+  authors: ("XXX", "YYY"),
+  author_id: ("20010001", "20010002"),
   date: (2024, 06, 23),
   cover_style: "hdu_report",
 )
@@ -51,8 +51,8 @@
 = 大标题测试2
 
 #img(
-image("./template/assets/hdu.png"),
-caption: "测试图片",
+  image("./template/assets/hdu.png"),
+  caption: "测试图片",
 ) <img:test>
 
 
@@ -64,30 +64,30 @@ caption: "测试图片",
 公式测试引用@equation:test
 
 #tbl(
-table(
-columns: (auto, auto),
-  [姓名], [性别],
-  [张三], [男],
-  [李四], [女],
-    ),
+  table(
+    columns: (auto, auto),
+    [姓名], [性别],
+    [张三], [男],
+    [李四], [女],
+  ),
   caption: "测试表格",
 ) <table:test>
 
 表格测试引用@table:test
 
 #code(
-```cpp
-  #include <iostream>
-  int main() {
-    std::cout << "Hello World!\n";
-    return 0;
-  }
-```,
+  ```cpp
+    #include <iostream>
+    int main() {
+      std::cout << "Hello World!\n";
+      return 0;
+    }
+  ```,
   caption: "测试代码",
 ) <code:test>
 
 #code(
-```python
+  ```python
   print("Hello World!")
   ```,
   caption: "测试代码2",
@@ -96,7 +96,5 @@ columns: (auto, auto),
 代码测试引用@code:test,
 代码测试引用@code:test2
 
-测试参考文献引用@test
 
 图片测试引用@img:test
-#bibliography("bib.yaml", style:"gb-7714-2015-numeric")

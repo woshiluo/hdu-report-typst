@@ -1,7 +1,7 @@
 #let font_style = (
   heiti: "Source Han Sans",
   songti: "Source Han Serif",
-  kaiti: "LXGW WenKai"
+  kaiti: "LXGW WenKai",
 );
 
 #let font_size = (
@@ -20,5 +20,5 @@
   六号: 7.5pt,
   小六: 6.5pt,
   七号: 5.5pt,
-  八号: 5pt
+  八号: 5pt,
 );
