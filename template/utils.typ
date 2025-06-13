@@ -14,7 +14,7 @@
     #text(font: font_style.heiti, weight: "semibold", fill: hdu_blue, size: 18pt, "目录")
   ]
 
-  h(1em)
+  v(1em)
 
   set text(font: font_style.heiti, size: 12pt)
 
