@@ -9,20 +9,24 @@
 
 #let project(
   title: "Title",
-  authors: ("author1", "author2"),
-  date: (2023, 5, 14),
-  name: "测试名称",
-  cover_style: "normal",
+  subtitle: "测试名称",
   class: "计科2000",
   grade: "2021",
   department: "计算机科学与技术学院",
-  id: "2020000000",
+  authors: ("author1", "author2"),
+  author_id: ("20010001", "20010002"),
+  date: (2023, 5, 14),
+  cover_style: "normal",
   body,
 ) = {
   set document(title: title, author: authors)
   set page("a4", numbering: "1")
   set text(font: font_style.songti, size: font_size.五号, lang: "zh")
   set par(first-line-indent: (amount: 2em, all: true))
+
+  if not ("normal", "hdu_report").contains(cover_style) {
+    panic("`cover_style` should be \"normal\" or \"hdu_report\"")
+  }
 
   if cover_style == "normal" {
     cover_normal(
@@ -33,13 +37,13 @@
   } else if cover_style == "hdu_report" {
     cover_hdu_report(
       title: title,
+      subtitle: subtitle,
       authors: authors,
-      name: name,
+      author_id: author_id,
       class: class,
       grade: grade,
       department: department,
       date: date,
-      id: id,
     )
   } else {
     cover_normal(
