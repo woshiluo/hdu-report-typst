@@ -2,9 +2,15 @@
 
 #let hdu_blue = color.rgb(0, 0, 148)
 
-#let date_format(date: (2023, 5, 14)) = {
+#let date_format(date) = {
   set text(font: font_style.songti, size: font_size.四号)
-  [#date.at(0) 年 #date.at(1) 月 #date.at(2) 日]
+  if type(date) == datetime {
+    [#date.display("[year] 年 [month] 月 [day] 日")]
+  } else if type(date) == array {
+    [#date.at(0) 年 #date.at(1) 月 #date.at(2) 日]
+  } else {
+    panic("array or datetime expected, got " + str(type(date)))
+  }
 }
 
 #let toc() = {
