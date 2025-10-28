@@ -72,6 +72,7 @@
     (authors + author_id,)
   }
 
+  set page("a4", numbering: none)
   align(left)[
     #image("assets/hdu.png", width: 60%)
   ]
