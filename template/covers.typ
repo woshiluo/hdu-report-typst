@@ -19,7 +19,7 @@
         authors
       }
     }\
-    #date_format(date: date);
+    #date_format(date);
   ]
 }
 
