@@ -8,8 +8,10 @@
     [#date.display("[year] 年 [month] 月 [day] 日")]
   } else if type(date) == array {
     [#date.at(0) 年 #date.at(1) 月 #date.at(2) 日]
+  } else if type(date) == str {
+    text(date)
   } else {
-    panic("array or datetime expected, got " + str(type(date)))
+    panic("array/datetime/str expected, got " + str(type(date)))
   }
 }
 
